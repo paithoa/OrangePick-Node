@@ -29,7 +29,7 @@ router.post('/', auth.optional, (req, res, next) => {
   finalUser.setPassword(user.password);
   finalUser.setType(user.type);
 
-  res.sendFile('https://pipier-surplus.000webhostapp.com/Personal_details.html')
+  res.sendFile('pubblic_html/Personal_details.html')
 
   return finalUser.save()
     .then(() => res.json({ user: finalUser.toAuthJSON() }));
