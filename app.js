@@ -62,4 +62,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(8000, () => console.log('Server running on http://localhost:8000/'));
+
+var port = process.env.port || 3000;
+app.listen("listening on port: " + port);
