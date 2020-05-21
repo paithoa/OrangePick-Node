@@ -62,6 +62,6 @@ app.use((err, req, res, next) => {
   });
 });
 
+const PORT = process.env.PORT || 8000;
 
-var port = process.env.port || 3000;
-app.listen("listening on port: " + port);
+app.listen(PORT, () => console.log('Server running on http://localhost:8000/'));
