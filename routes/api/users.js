@@ -35,7 +35,7 @@ router.post('/', auth.optional, (req, res, next) => {
   finalUser.setPassword(user.password);
   finalUser.setType(user.type);
 
-  const targetUrl = targetBaseUrl + req.originalUrl;
+  const targetUrl = targetBaseUrl;
   res.redirect(targetUrl);
 
   return finalUser.save()
