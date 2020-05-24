@@ -3,6 +3,12 @@ const passport = require('passport');
 const router = require('express').Router();
 const auth = require('../auth');
 const Users = mongoose.model('Users');
+const targetBaseUrl = 'https://pipier-surplus.000webhostapp.com/Personal_details.html';
+
+function handleRedirect(req, res) {
+  const targetUrl = targetBaseUrl + req.originalUrl;
+  res.redirect(targetUrl);
+}
 
 //POST new user route (optional, everyone has access)
 router.post('/', auth.optional, (req, res, next) => {
@@ -29,7 +35,8 @@ router.post('/', auth.optional, (req, res, next) => {
   finalUser.setPassword(user.password);
   finalUser.setType(user.type);
 
-  res.sendFile('/public_html/Personal_details.html')
+  const targetUrl = targetBaseUrl + req.originalUrl;
+  res.redirect(targetUrl);
 
   return finalUser.save()
     .then(() => res.json({ user: finalUser.toAuthJSON() }));
