@@ -9,12 +9,27 @@ const UsersSchema = new Schema({
   hash: String,
   salt: String,
   type: String,
+  firstname: String,
+  lastname: String,
+  dob: Date,
+  city: String,
+  postcode: Number,
+  gender: String,
 });
 
 UsersSchema.methods.setPassword = function(password) {
   this.salt = crypto.randomBytes(16).toString('hex');
   this.hash = crypto.pbkdf2Sync(password, this.salt, 10000, 512, 'sha512').toString('hex');
   // to save the type 
+};
+
+UsersSchema.methods.setIdentity = function(information){
+    this.firstname = information.firstname
+    this.lastname = information.lastname
+    this.dob = information.dob
+    this.city = information.city
+    this.postcode = information.postcode
+    this.gender = information.gender
 };
 
 UsersSchema.methods.setType = function(type) {
