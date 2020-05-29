@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+var flash = require('express-flash-messages')
 const cors = require('cors');
 const mongoose = require('mongoose');
 const errorHandler = require('errorhandler');
@@ -14,6 +15,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 //Initiate our app
 const app = express();
+app.use(flash())
 
 //Configure our app
 app.use(cors());
@@ -28,7 +30,7 @@ if(!isProduction) {
 }
 
 //Configure Mongoose
-mongoose.connect('mongodb+srv://handy-project:Paithoa301197@cluster0-inunu.gcp.mongodb.net/test?authSource=admin&replicaSet=Cluster0-shard-0&readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=true');
+mongoose.connect('mongodb+srv://admin:admin@cluster0-hkw5i.mongodb.net/test?authSource=admin&replicaSet=Cluster0-shard-0&readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=true');
 mongoose.set('debug', true);
 
 //Models and Routes
@@ -61,7 +63,15 @@ app.use((err, req, res, next) => {
     },
   });
 });
+app.get('/', (req, res) => res.render("index.ejs"))
 
+app.get('/login', (req, res) => res.render("index.ejs"))
+app.get('/signup',(req,res) => res.render("Sign_Up.ejs"))
+app.get('/signup_customer', (req, res) => res.render("Sign_Up___Consumer.ejs"))
+app.get('/signup_business', (req,res)=> res.render('Sign_Up_Business.ejs'))
+app.get('/personal_details', (req,res) => res.render('Personal_details.ejs'))
+app.get('/personal_details_1', (req,res)=> res.render('Personal_details___1.ejs'))
+app.get('/dashboard', (req,res) => res.send('dashboard.ejs'))
 const PORT = process.env.PORT || 8000;
 
 app.listen(PORT, () => console.log('Server running on http://localhost:8000/'));

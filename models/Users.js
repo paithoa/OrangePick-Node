@@ -15,6 +15,7 @@ const UsersSchema = new Schema({
   city: String,
   postcode: Number,
   gender: String,
+  interest: String
 });
 
 UsersSchema.methods.setPassword = function(password) {
@@ -30,6 +31,10 @@ UsersSchema.methods.setIdentity = function(information){
     this.city = information.city
     this.postcode = information.postcode
     this.gender = information.gender
+};
+
+UsersSchema.methods.setInterest = function(information){
+  this.interest = information.interest
 };
 
 UsersSchema.methods.setType = function(type) {
