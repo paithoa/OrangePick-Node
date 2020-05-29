@@ -9,14 +9,14 @@ const errorHandler = require('errorhandler');
 var mongodb = require('mongodb');
 var url = "mongodb+srv://admin:admin@cluster0-hkw5i.mongodb.net/test?retryWrites=true&w=majority";
 // var MongoClient = mongodb.MongoClient;
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://admin:admin@cluster0-hkw5i.mongodb.net/test?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("test").collection("users");
-  // perform actions on the collection object
-  client.close();
-});
+// const MongoClient = require('mongodb').MongoClient;
+// const uri = "mongodb+srv://admin:admin@cluster0-hkw5i.mongodb.net/test?retryWrites=true&w=majority";
+// const client = new MongoClient(uri, { useNewUrlParser: true });
+// client.connect(err => {
+//   const collection = client.db("test").collection("users");
+//   // perform actions on the collection object
+//   client.close();
+// });
 //Configure mongoose's promise to global promise
 mongoose.promise = global.Promise;
 
@@ -48,13 +48,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({ secret: 'passport-tutorial', cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false }));
+require('dotenv').config()
 
 if(!isProduction) {
   app.use(errorHandler());
 }
 
 //Configure Mongoose
-mongoose.connect(url);
+mongoose.connect('mongodb://orangepick:orangepick1@ds011870.mlab.com:11870/heroku_jj8lhjsz' || url);
 mongoose.set('debug', true);
 
 //Models and Routes
