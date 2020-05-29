@@ -6,6 +6,9 @@ var flash = require('express-flash-messages')
 const cors = require('cors');
 const mongoose = require('mongoose');
 const errorHandler = require('errorhandler');
+var mongodb = require('mongodb');
+var url = 'mongodb+srv://admin:admin@cluster0-hkw5i.mongodb.net/test?authSource=admin&replicaSet=Cluster0-shard-0&readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=true'
+var MongoClient = mongodb.MongoClient;
 
 //Configure mongoose's promise to global promise
 mongoose.promise = global.Promise;
@@ -16,7 +19,19 @@ const isProduction = process.env.NODE_ENV === 'production';
 //Initiate our app
 const app = express();
 app.use(flash())
+// Use connect method to connect to the Server
+MongoClient.connect(url, function (err, db) {
+  if (err) {
+    console.log('Unable to connect to the mongoDB server. Error:', err);
+  } else {
+    console.log('Connection established to', url);
 
+    // do some work here with the database.
+
+    //Close connection
+    db.close();
+  }
+});
 //Configure our app
 app.use(cors());
 app.use(require('morgan')('dev'));
@@ -30,7 +45,7 @@ if(!isProduction) {
 }
 
 //Configure Mongoose
-mongoose.connect('mongodb+srv://admin:admin@cluster0-hkw5i.mongodb.net/test?authSource=admin&replicaSet=Cluster0-shard-0&readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=true');
+mongoose.connect(url);
 mongoose.set('debug', true);
 
 //Models and Routes
