@@ -7,9 +7,16 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const errorHandler = require('errorhandler');
 var mongodb = require('mongodb');
-var url = 'mongodb+srv://admin:admin@cluster0-hkw5i.mongodb.net/test?authSource=admin&replicaSet=Cluster0-shard-0&readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=true'
-var MongoClient = mongodb.MongoClient;
-
+var url = "mongodb+srv://admin:admin@cluster0-hkw5i.mongodb.net/test?retryWrites=true&w=majority";
+// var MongoClient = mongodb.MongoClient;
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://admin:admin@cluster0-hkw5i.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("users");
+  // perform actions on the collection object
+  client.close();
+});
 //Configure mongoose's promise to global promise
 mongoose.promise = global.Promise;
 
@@ -20,18 +27,20 @@ const isProduction = process.env.NODE_ENV === 'production';
 const app = express();
 app.use(flash())
 // Use connect method to connect to the Server
-MongoClient.connect(url, function (err, db) {
-  if (err) {
-    console.log('Unable to connect to the mongoDB server. Error:', err);
-  } else {
-    console.log('Connection established to', url);
+// MongoClient.connect(url, function (err, db) {
+//   if (err) {
+//     console.log('Unable to connect to the mongoDB server. Error:', err);
+//   } else {
+//     console.log('Connection established to', url);
 
-    // do some work here with the database.
+//     // do some work here with the database.
 
-    //Close connection
-    db.close();
-  }
-});
+//     //Close connection
+//     db.close();
+//   }
+// });
+
+
 //Configure our app
 app.use(cors());
 app.use(require('morgan')('dev'));
