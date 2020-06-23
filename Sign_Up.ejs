@@ -4,16 +4,16 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login</title>
+<title>Sign Up</title>
 <style id="applicationStylesheet" type="text/css">
 	.mediaViewInfo {
-		--web-view-name: Login;
-		--web-view-id: Login;
+		--web-view-name: Sign Up;
+		--web-view-id: Sign_Up;
 		--web-scale-on-resize: true;
 		--web-enable-deep-linking: true;
 	}
 	:root {
-		--web-view-ids: Login;
+		--web-view-ids: Sign_Up;
 	}
 	* {
 		margin: 0;
@@ -21,207 +21,39 @@
 		box-sizing: border-box;
 		border: none;
 	}
-	#Login {
+	#Sign_Up {
 		position: absolute;
 		width: 1280px;
-		height: 100vh;
+		height: 800px;
 		background-color: rgba(255,255,255,1);
 		overflow: hidden;
-		--web-view-name: Login;
-		--web-view-id: Login;
+		--web-view-name: Sign Up;
+		--web-view-id: Sign_Up;
 		--web-scale-on-resize: true;
 		--web-enable-deep-linking: true;
 	}
-	@keyframes  {
+	@keyframes fadein {
 	
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
 	
 	}
-	#Don_t_have_an_account_yet__Joi {
-		position: absolute;
-		left: 858px;
-		top: 730px;
-		overflow: visible;
-		width: 285px;
-		height: 16px;
-		--web-animation: fadein 0.8s ease-out;
-		--web-action-type: page;
-		--web-action-target: signup;
-		cursor: pointer;
-		text-align: left;
-		font-family: Josefin Sans;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 14px;
-		color: rgba(0,0,0,1);
-	}
-	#Group_5 {
-		position: absolute;
-		width: 299px;
-		height: 350px;
-		left: 851px;
-		top: 228px;
-		overflow: visible;
-	}
-	#Group_7 {
-		position: absolute;
-		width: 239px;
-		height: 47px;
-		left: 31px;
-		top: 240px;
-		overflow: visible;
-	}
-	.Rectangle_4 {
-		position: absolute;
-		overflow: visible;
-		width: 239px;
-		height: 47px;
-		left: 0px;
-		top: 0px;
-	}
-	#Login_z {
-		position: absolute;
-		left: 98px;
-		top: 16px;
-		overflow: visible;
-		width: 45px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Josefin Sans;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 16px;
-		color: rgba(19,13,13,1);
-	}
-	#Group_2 {
-		position: absolute;
-		width: 298px;
-		height: 62px;
-		left: 1px;
-		top: 151px;
-		overflow: visible;
-	}
-	#Password {
-		position: absolute;
-		left: 0px;
-		top: 0px;
-		overflow: visible;
-		width: 68px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Josefin Sans;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 16px;
-		color: rgba(19,13,13,1);
-	}
-	.Rectangle_8 {
-		position: absolute;
-		overflow: visible;
-		width: 298px;
-		height: 41px;
-		left: 0px;
-		top: 21px;
-	}
-	#Group_3 {
-		position: absolute;
-		width: 298px;
-		height: 62px;
-		left: 0px;
-		top: 62px;
-		overflow: visible;
-	}
-	#Email {
-		position: absolute;
-		left: 0px;
-		top: 0px;
-		overflow: visible;
-		width: 42px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Josefin Sans;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 16px;
-		color: rgba(19,13,13,1);
-	}
-	.Rectangle_9 {
-		position: absolute;
-		overflow: visible;
-		width: 298px;
-		height: 41px;
-		left: 0px;
-		top: 21px;
-	}
-	#Group_1 {
-		position: absolute;
-		width: 130px;
-		height: 20px;
-		left: 0px;
-		top: 330px;
-		overflow: visible;
-	}
-	#Remember_Me {
-		position: absolute;
-		left: 25px;
-		top: 2px;
-		overflow: visible;
-		width: 106px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Josefin Sans;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 16px;
-		color: rgba(19,13,13,1);
-	}
-	.Rectangle_10 {
-		position: absolute;
-		overflow: visible;
-		width: 20px;
-		height: 20px;
-		left: 0px;
-		top: 0px;
-	}
-	#Forgot_Password_ {
-		position: absolute;
-		left: 172px;
-		top: 332px;
-		overflow: visible;
-		width: 127px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Josefin Sans;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 16px;
-		color: rgba(254,111,33,1);
-	}
-	#Login_ba {
-		position: absolute;
-		left: 106px;
-		top: 0px;
-		overflow: visible;
-		width: 86px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Span;
-		font-style: normal;
-		font-weight: lighter;
-		font-size: 34px;
-		color: rgba(19,13,13,1);
-	}
-	.Rectangle_30 {
+	.Rectangle_3 {
 		filter: drop-shadow(-7px 0px 6px rgba(0, 0, 0, 0.161));
 		position: absolute;
 		overflow: visible;
 		width: 700px;
 		height: 818px;
-		left: -2px;
+		left: 598px;
 		top: 0px;
 	}
 	#Discover_gems_in_your_local_co {
 		position: absolute;
-		left: 113px;
+		left: 713px;
 		top: 491px;
 		overflow: visible;
 		width: 454px;
@@ -233,11 +65,165 @@
 		font-size: 26px;
 		color: rgba(19,13,13,1);
 	}
-	#Group_54 {
+	#Already_have_an_account__Login {
+		position: absolute;
+		left: 197px;
+		top: 730px;
+		overflow: visible;
+		width: 206px;
+		height: 16px;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: index.html;
+		cursor: pointer;
+		text-align: left;
+		font-family: Josefin Sans;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(0,0,0,1);
+	}
+	#Sign_Up_y {
+		position: absolute;
+		left: 242px;
+		top: 279px;
+		overflow: visible;
+		width: 124px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Span;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 34px;
+		color: rgba(19,13,13,1);
+	}
+	#Component_1___1 {
+		position: absolute;
+		width: 60.211px;
+		height: 84.405px;
+		left: 270px;
+		top: 171px;
+		overflow: visible;
+	}
+	.Ellipse_1_ {
+		position: absolute;
+		overflow: visible;
+		width: 36px;
+		height: 34px;
+		left: 13px;
+		top: 0px;
+	}
+	.Path_1 {
+		overflow: visible;
+		position: absolute;
+		width: 60.211px;
+		height: 56.902px;
+		left: 0px;
+		top: 27.503px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Are_you_a_consumer_or_a_busine {
+		position: absolute;
+		left: 145px;
+		top: 345px;
+		overflow: visible;
+		width: 312px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Josefin Sans;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20px;
+		color: rgba(19,13,13,1);
+	}
+	.Rectangle_12 {
+		position: absolute;
+		overflow: visible;
+		width: 289px;
+		height: 110px;
+		left: 156px;
+		top: 518px;
+	}
+	#Group_52 {
+		position: absolute;
+		width: 289px;
+		height: 110px;
+		left: 156px;
+		top: 383px;
+		overflow: visible;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		cursor: pointer;
+	}
+	.Rectangle_4 {
+		position: absolute;
+		overflow: visible;
+		width: 289px;
+		height: 110px;
+		left: 0px;
+		top: 0px;
+	}
+	#Browse__save_and_ship_your_fav {
+		position: absolute;
+		left: 32px;
+		top: 49px;
+		overflow: visible;
+		width: 225px;
+		height: 36px;
+		text-align: center;
+		font-family: Josefin Sans;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		color: rgba(112,112,112,1);
+	}
+	#Consumer {
+		position: absolute;
+		left: 97px;
+		top: 27px;
+		overflow: visible;
+		width: 95px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Josefin Sans;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(19,13,13,1);
+	}
+	#Share_your_business_with_your_ {
+		position: absolute;
+		left: 189px;
+		top: 567px;
+		overflow: visible;
+		width: 225px;
+		height: 36px;
+		text-align: center;
+		font-family: Josefin Sans;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		color: rgba(112,112,112,1);
+	}
+	#Business {
+		position: absolute;
+		left: 261px;
+		top: 545px;
+		overflow: visible;
+		width: 81px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Josefin Sans;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(19,13,13,1);
+	}
+	#Component_2___1 {
 		position: absolute;
 		width: 127.395px;
 		height: 117.771px;
-		left: 275px;
+		left: 875px;
 		top: 238.634px;
 		overflow: visible;
 	}
@@ -247,7 +233,7 @@
 		position: absolute;
 		width: 111.688px;
 		height: 104.117px;
-		transform: translate(0px, 0px) matrix(1,0,0,1,14.8064,12.687) rotate(-1deg);
+		transform: translate(0px, 0px) matrix(1,0,0,1,14.8063,12.687) rotate(-1deg);
 		transform-origin: center;
 		left: 0px;
 		top: 0px;
@@ -265,7 +251,7 @@
 	}
 	#OrangePick_ {
 		position: absolute;
-		left: 107px;
+		left: 713px;
 		top: 384px;
 		overflow: visible;
 		width: 460px;
@@ -276,6 +262,12 @@
 		font-weight: bold;
 		font-size: 80px;
 		color: rgba(19,13,13,1);
+	}
+	#Rectangle_4:hover{
+		fill:#FFE4D5
+	}
+	#Rectangle_12:hover{
+		fill:#FFE4D5
 	}
 </style>
 <script id="applicationScript">
@@ -2702,70 +2694,63 @@ window.application = new Application();
 </script>
 </head>
 <body>
-	<form action="api/users/login" enctype='application/json' name="myForm" method="POST">
-
-<div id="Login">
-	<div onclick="application.goToTargetView(event)" id="Don_t_have_an_account_yet__Joi">
-		<span>Don't have an account yet? </span><span style="color:rgba(254,111,33,1);text-decoration:true;">Join Orange Pick</span>
-	</div>
-	<div id="Group_5">
-		<div id="Group_7">
-			<svg class="Rectangle_4">
-				<rect fill="rgba(254,111,33,1)" id="Rectangle_4" rx="10" ry="10" x="0" y="0" width="239" height="47">
-				</rect>
-			</svg>
-			<div id="Login_z">
-				<span onClick="document.forms['myForm'].submit();">Log In</span>
-			</div>
-		</div>
-		<div id="Group_2">
-			<div id="Password">
-				<span>Password</span>
-			</div>
-			<input tabindex="0" style="margin-top:10%;background: #FFFFFF 0% 0% no-repeat padding-box;
-		border: 1px solid #707070;
-		border-radius: 5px;
-		opacity: 1;top: 311px;
-left: 851px;
-width: 298px;
-height: 41px;" type="password" placeholder="" name='user[password]' id="password" required>
-		</div>
-		<div id="Group_3">
-			<div id="Email">
-				<span>Email</span>
-			</div>
-			<input tabindex="1" style="margin-top:10%;background: #FFFFFF 0% 0% no-repeat padding-box;
-		border: 1px solid #707070;
-		border-radius: 5px;
-		opacity: 1;top: 311px;
-left: 851px;
-width: 298px;
-height: 41px;" type="email" placeholder="" name='user[email]' id="email" required>
-		</div>
-		<div id="Group_1">
-			<div id="Remember_Me">
-				<span>Remember Me</span>
-			</div>
-			<svg class="Rectangle_10">
-				<rect fill="rgba(255,255,255,1)" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_10" rx="5" ry="5" x="0" y="0" width="20" height="20">
-				</rect>
-			</svg>
-		</div>
-		<div id="Forgot_Password_">
-			<span>Forgot Password?</span>
-		</div>
-		<div id="Login_ba">
-			<span>Login</span>
-		</div>
-	</div>
-	<svg class="Rectangle_30">
-		<rect fill="rgba(254,111,33,1)" id="Rectangle_30" style="height:100vh;" rx="0" ry="0" x="0" y="0" width="682" height="800">
+<div id="Sign_Up">
+	<svg class="Rectangle_3">
+		<rect fill="rgba(254,111,33,1)" id="Rectangle_3" rx="0" ry="0" x="0" y="0" width="682" height="800">
 		</rect>
 	</svg>
 	<div id="Discover_gems_in_your_local_co">
 		<span>Discover gems in your local community</span>
 	</div>
-	<div id="Group_54">
+	<div onclick="application.goToTargetView(event)" id="Already_have_an_account__Login">
+		<span>Already have an account? </span><span style="color:rgba(254,111,33,1);text-decoration:true;">Login</span>
+	</div>
+	<div id="Sign_Up_y">
+		<span>Sign Up</span>
+	</div>
+	<div id="Component_1___1" class="Component_1___1">
+		<svg class="Ellipse_1_">
+			<linearGradient id="Ellipse_1_" spreadMethod="pad" x1="0.5" x2="0.5" y1="0" y2="1">
+				<stop offset="0" stop-color="#ffe3d4" stop-opacity="1"></stop>
+				<stop offset="1" stop-color="#ff5a00" stop-opacity="1"></stop>
+			</linearGradient>
+			<ellipse fill="url(#Ellipse_1_)" id="Ellipse_1_" rx="18" ry="17" cx="18" cy="17">
+			</ellipse>
+		</svg>
+		<svg class="Path_1" viewBox="-2568.866 485.943 60.211 56.902">
+			<path fill="rgba(254,111,33,1)" id="Path_1" d="M -2508.65478515625 540.6123046875 C -2508.65478515625 540.6123046875 -2521.906982421875 500.1266479492188 -2524.5 494.0634155273438 C -2527.0927734375 488.0002136230469 -2536.60693359375 479.8630981445312 -2547.25927734375 492.9610290527344 C -2557.91162109375 506.0588989257812 -2568.8662109375 542.8446655273438 -2568.8662109375 542.8446655273438 L -2508.65478515625 540.6123046875 Z">
+			</path>
+		</svg>
+	</div>
+	<div id="Are_you_a_consumer_or_a_busine">
+		<span>Are you a consumer or a business?</span>
+	</div>
+	<a href="/signup_business" style="text-decoration: none;color : #000;">
+	<svg class="Rectangle_12">
+		<rect fill="rgba(255,255,255,1)"  stroke="rgba(254,111,33,1)" stroke-width="1.5px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_12" rx="10" ry="10" x="0" y="0" width="289" height="110">
+		</rect>
+	</svg>
+	</a>
+	<div onclick="application.goToTargetView(event)" id="Group_52">
+		<a href="/signup_customer" style="text-decoration: none;color : #000;">
+		<svg class="Rectangle_4">
+			<rect fill="rgba(255,255,255,1)" stroke="rgba(254,111,33,1)" stroke-width="1.5px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_4" rx="10" ry="10" x="0" y="0" width="289" height="110">
+			</rect>
+		</svg>
+		<div id="Browse__save_and_ship_your_fav">
+			<span>Browse, save and ship your favourite local business.</span>
+		</div>
+		<div id="Consumer">
+			<span>Consumer</span>
+		</div>
+	</div>
+	<div id="Share_your_business_with_your_">
+		<span>Share your business with your local community</span>
+	</div>
+	<div id="Business">
+		<span>Business</span>
+</div>
+	<div id="Component_2___1" class="Component_2___1">
 		<svg class="Path_9" viewBox="0 0 111.688 104.117">
 			<path fill="rgba(252,161,72,1)" stroke="rgba(253,144,39,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Path_9" d="M 51.48872756958008 0.2268469333648682 C 62.10547637939453 -0.2597570717334747 77.14611053466797 -0.6579120755195618 86.43611907958984 6.862381935119629 C 95.72578430175781 14.38267612457275 112.5803375244141 28.14035415649414 111.6512603759766 46.23328399658203 C 110.7221908569336 64.32621002197266 108.5548324584961 81.62296295166016 98.37997436523438 92.68213653564453 C 88.20545959472656 103.7413635253906 42.19907379150391 105.9532012939453 31.5381031036377 102.8124160766602 C 20.87713050842285 99.67167663574219 4.951647281646729 81.1805419921875 2.341684818267822 69.236572265625 C -0.2686376571655273 57.29254531860352 -2.037975788116455 46.71988677978516 4.59749174118042 31.63507461547852 C 11.23295974731445 16.5503044128418 40.87197875976562 0.7134509086608887 51.48872756958008 0.2268469333648682 Z">
 			</path>
@@ -2779,20 +2764,5 @@ height: 41px;" type="email" placeholder="" name='user[email]' id="email" require
 		<span>OrangePick</span><br>
 	</div>
 </div>
-</form>
 </body>
 </html>
-<script>
-function toJSON(){
-	var formData = JSON.stringify($("#myForm").serializeArray());
-  }
-document.getElementById('password').addEventListener('keypress', function(event) {
-	if (event.keyCode == 13) {
-		event.preventDefault();
-		document.forms['myForm'].submit();
-	}
-});
-
-
-
-</script>
